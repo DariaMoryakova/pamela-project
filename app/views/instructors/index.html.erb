@@ -1,0 +1,14 @@
+
+<h1>  Instructors: </h1>
+
+ 
+<button > <%= link_to "add instructor ", new_instructor_path %> </button>
+</br>
+<% @instructors.each do |instructor|  %>
+<%=  instructor.first_name  %>
+<%=  instructor.last_name  %>
+<%=  instructor.age %>
+<%=  instructor.salary %>
+<%=  instructor.highest_comp_ed %>
+</br>
+<%  end %> 

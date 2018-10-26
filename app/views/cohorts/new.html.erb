@@ -1,0 +1,12 @@
+<h1>Cohorts#new</h1>
+<p>Find me in app/views/cohorts/new.html.erb</p>
+
+<%= form_with model: @cohort, url: cohorts_path do |form| %>
+  <h1> Cohort Name </h1> <%= form.text_field :cohort_name %>
+  <h1> Start date </h1> <%= form.text_field :start_date %>
+  <h1> End date  </h1> <%= form.text_field :end_date %>
+   <h1> Instructor id  </h1> <%= form.text_field :instructor_id %>
+
+  <%= form.submit %>
+<% end %>
+

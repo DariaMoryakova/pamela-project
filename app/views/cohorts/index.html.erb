@@ -1,0 +1,16 @@
+
+<h1>  Cohorts: </h1>
+
+ 
+<button > <%= link_to "add cohort ", new_cohort_path %> </button>
+</br>
+<% @cohorts.each do |cohort|  %>
+<%=   cohort.cohort_name %>
+<%=   cohort.start_date  %>
+<%=   cohort.end_date %>
+<%=   cohort.instructor_id %>
+</br>
+<%  end %> 
+
+
+  
