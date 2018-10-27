@@ -26,7 +26,9 @@ class StudentsController < ApplicationController
     @student = Student.find_by_id(id)
   end 
 
-
+  def edit 
+    @student = Student.find(params[:id])
+  end 
 
   def other_hello 
       redirect_to(:action => 'hello')

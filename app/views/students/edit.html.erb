@@ -1,0 +1,14 @@
+<h1>Edit a new student: </h1>
+
+
+<%= form_with model: @student, url: edit_students_path do |form| %>
+  <h2> First name: </h2> <%= form.text_field :first_name %>
+  <h2> Last name: </h2> <%= form.text_field :last_name %>
+  <h2> Age of the student: </h2> <%= form.text_field :age %>
+  <h2> Highest level of education: </h2> <%= form.text_field :highest_level_of_education %>
+  <%= form.hidden_field :cohort_id, value: @cohort_id %>
+  </br>
+  </br>
+  </br>
+  <%= form.submit %>
+<% end %>

@@ -2,15 +2,22 @@
 <h1>  Students: </h1>
 
  
-<button > <%= link_to "add sstudent ", new_student_path %> </button>
+<button > <%= link_to "add student ", new_student_path %> </button>
 </br>
  <% @students.each do |student|  %>
-
+ <div id="item<%=student.id %>" 
 <h2>
 <%=   student.first_name  %>
 <%=   student.last_name  %>
 <%=   student.age %>
 <%=   student.highest_level_of_education %>
+
 </h2>
 
+
+
+<%= link_to(student_path(id: student.id),method: :delete, remote: true) do %>
+"dfsdg"
 <%  end %> 
+</div>
+<% end %>

@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'students/show'
   get 'students/:id', to: 'students#show' , as: 'student'
   get 'students/hello'
-  
+  get 'students/update', to: 'students#update'
+  get 'students/:id', to: 'students#edit', as: 'students'
   
   post "/students/create", to: "students#create"
   
