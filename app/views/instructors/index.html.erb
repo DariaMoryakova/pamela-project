@@ -3,12 +3,19 @@
 
  
 <button > <%= link_to "add instructor ", new_instructor_path %> </button>
+
 </br>
+</br> 
 <% @instructors.each do |instructor|  %>
-<%=  instructor.first_name  %>
+<p id="instructor<%=instructor.id%>">
+<%=  instructor.first_name  %> 
 <%=  instructor.last_name  %>
 <%=  instructor.age %>
 <%=  instructor.salary %>
 <%=  instructor.highest_comp_ed %>
-</br>
+
+<%= link_to(instructor_path(id: instructor.id),method: :delete, remote: true ) do %>
+"DELETE"
+<%  end %> 
+</p>
 <%  end %> 

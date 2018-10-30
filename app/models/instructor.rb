@@ -1,3 +1,4 @@
 class Instructor < ApplicationRecord
-    # belongs_to :cohort
+    has_one :cohort, dependent: :delete 
+
 end 

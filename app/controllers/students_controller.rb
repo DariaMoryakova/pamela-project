@@ -6,13 +6,15 @@ class StudentsController < ApplicationController
   end 
 
   def create
-    @student = Student.create(
-      first_name: params[:student] [:first_name],
-      last_name: params[:student] [:last_name],
-      age: params[:student] [:age],
-      highest_level_of_education: params[:student] [:highest_level_of_education]
-    )
+    # @student = Student.create(
+    #   first_name: params[:student] [:first_name],
+    #   last_name: params[:student] [:last_name],
+    #   age: params[:student] [:age],
+    #   highest_level_of_education: params[:student] [:highest_level_of_education]
+    # )
    
+    @student = Student.create(instructor_params)
+
     redirect_to @student
      end
 
@@ -34,18 +36,14 @@ class StudentsController < ApplicationController
       redirect_to(:action => 'hello')
   end 
   
-  def destroy 
-    #we find a student first: 
-      id = params[:id]
-      @student = Student.find_by_id(id) 
-      @student.destroy
+  def destroy
+    id = params[:id]
+    @student = Student.find_by_id(id)
+    @student.destroy
+    respond_to do |format|
+      format.js 
+    end
+  end 
 
-        respond_to do |format|
-        # when responding to a html request, it will respond by
-        #   generating the html from the template located at: /app/views/users/index.html.erb
-          format.html
-          format.js 
-          end 
-      end 
 end
 

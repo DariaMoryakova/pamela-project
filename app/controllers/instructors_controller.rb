@@ -34,12 +34,27 @@ class InstructorsController < ApplicationController
     def other_hello 
         redirect_to(:action => 'hello')
     end 
-  
+    
+    def destroy
+      id = params[:id]
+      @instructor = Instructor.find_by_id(id)
+      @instructor.destroy
+      respond_to do |format|
+        format.js 
+      end
+    end 
+
+    def edit 
+      @instructor = Instructor.find(params[:id]) 
+    end 
+
     private
 
     def instructor_params
         params.require(:instructor).permit(:first_name,:last_name,:age,:salary,:highest_comp_ed)
     end
+
     
+ 
   end
   

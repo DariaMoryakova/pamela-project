@@ -25,9 +25,13 @@ Rails.application.routes.draw do
   get 'instructors/show'
   get 'instructors/:id', to: 'instructors#show' , as: 'instructor'
   get 'instructors/hello'
+  # get 'instructors/:id', to: 'instructors#edit', as: 'instructor'
 
   post "/instructors/create", to: "instructors#create"
+  delete "/instructors/:id" , to: "instructors#destroy"
   resources :instructors
+
+ 
 
   #Cohorts routes:
 
