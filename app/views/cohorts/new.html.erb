@@ -5,7 +5,7 @@
   <h1> Cohort Name </h1> <%= form.text_field :cohort_name %>
   <h1> Start date </h1> <%= form.text_field :start_date %>
   <h1> End date  </h1> <%= form.text_field :end_date %>
-   <h1> Instructor id  </h1> <%= form.text_field :instructor_id %>
+   <h1> Enter exact instructor ID: </h1> <%= form.select :instructor_id, Instructor.all.map{ |instructor|[instructor.first_name,instructor.id]} %>
 
   <%= form.submit %>
 <% end %>
