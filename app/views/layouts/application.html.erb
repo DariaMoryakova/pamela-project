@@ -23,12 +23,19 @@
   <body>
  
 <ul class="nav">
-  <%# <li class="active"><a href="/ideas"></a></li> %>
-  <%# <li class="dashboard"> Dashboard    </li> %>
+
+   <%= link_to instructors_path, class:"btn btn-sucess" do %>
   <li class="dashboard">  Instructors </li>
+  <%end %>
+   <%= link_to students_path, class:"btn btn-sucess" do %>
   <li class="dashboard"> Students </li>
+    <%end %>
+  <%= link_to courses_path, class:"btn btn-sucess" do %>
   <li class="dashboard"> Courses </li>
+    <%end %>
+    <%= link_to cohorts_path, class:"btn btn-sucess" do %>
   <li class="dashboard"> Cohorts </li>
+   <%end %>
 
 
  <%= link_to (destroy_user_session_path ), method: :delete do %>
@@ -65,11 +72,7 @@
 
 <div class="container">
     <div class="adminPanel">
-      
-
-
-
-  </div>
+</div>
 
     <div class="display">
      
