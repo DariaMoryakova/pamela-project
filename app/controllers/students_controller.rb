@@ -13,9 +13,9 @@ class StudentsController < ApplicationController
     #   highest_level_of_education: params[:student] [:highest_level_of_education]
     # )
    
-    @student = Student.create(instructor_params)
+    @student = Student.create(students_params)
 
-    redirect_to @student
+    redirect_to students_path
      end
 
   def new
@@ -30,6 +30,16 @@ class StudentsController < ApplicationController
 
   def edit 
     @student = Student.find(params[:id])
+
+  end 
+
+
+  def update 
+    student = Student.find(params[:id])
+    student.update(students_params)
+
+    redirect_to student_path(student)
+
   end 
 
   def other_hello 
@@ -44,6 +54,11 @@ class StudentsController < ApplicationController
       format.js 
     end
   end 
+
+
+  def students_params
+    params.require(:student).permit(:first_name,:last_name,:age,:highest_level_of_education)
+end
 
 end
 

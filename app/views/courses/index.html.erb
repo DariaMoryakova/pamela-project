@@ -1,0 +1,21 @@
+
+<h1>  Courses: </h1>
+
+<button > <%= link_to "add course ", new_course_path %> </button>
+</br>
+
+ <% @courses.each do |course|  %>
+ <h2 id="course<%=course.id%>">
+ 
+
+<%=   course.course_name  %>
+<%=   course.total_hours %>
+<button > <%= link_to "edit ", edit_student_path(course) %> </button>
+
+<%= link_to(course_path(id: course.id),method: :delete, remote: true ) do %>
+"DELETE"
+<%  end %> 
+</h2>
+
+
+<% end %>

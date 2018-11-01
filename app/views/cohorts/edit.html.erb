@@ -1,0 +1,13 @@
+<h1>Edit a new cohort: </h1>
+
+
+<%= form_with model: @cohort do |form| %>
+  <h2> Cohort name: </h2> <%= form.text_field :cohort_name %>
+  <h2> Start date: </h2> <%= form.text_field :start_date %>
+  <h2> End date: </h2> <%= form.text_field :end_date %>
+  <h2> Change instructor by ID: </h2> <%= form.text_field :instructor_id %>
+  </br>
+  </br>
+  </br>
+  <%= form.submit %>
+<% end %>

@@ -48,6 +48,13 @@ class InstructorsController < ApplicationController
       @instructor = Instructor.find(params[:id]) 
     end 
 
+    def update 
+      instructor = Instructor.find(params[:id]) 
+      instructor.update(instructor_params)
+
+      redirect_to instructor_path(instructor)
+    end  
+
     private
 
     def instructor_params

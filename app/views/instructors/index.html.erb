@@ -8,7 +8,9 @@
 </br> 
 <% @instructors.each do |instructor|  %>
 <p id="instructor<%=instructor.id%>">
-<%=  instructor.first_name  %> 
+<%=  instructor.first_name  %>
+<button > <%= link_to "edit ", edit_instructor_path(instructor) %> </button>
+
 <%=  instructor.last_name  %>
 <%=  instructor.age %>
 <%=  instructor.salary %>

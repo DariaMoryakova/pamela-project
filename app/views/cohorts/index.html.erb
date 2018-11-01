@@ -1,16 +1,37 @@
 
 <h1>  Cohorts: </h1>
 
- 
 <button > <%= link_to "add cohort ", new_cohort_path %> </button>
 </br>
-<% @cohorts.each do |cohort|  %>
-<%=   cohort.cohort_name %>
+
+ <% @cohorts.each do |cohort|  %>
+ <h2 id="cohort<%=cohort.id%>">
+ 
+
+<%=   cohort.cohort_name  %>
 <%=   cohort.start_date  %>
 <%=   cohort.end_date %>
-<%=   cohort.instructor_id %>
-</br>
+<%=   cohort.instructor_id  %>
+<button > <%= link_to "edit ", edit_cohort_path(cohort) %> </button>
+
+<%= link_to(cohort_path(id: cohort.id),method: :delete, remote: true ) do %>
+"DELETE"
 <%  end %> 
+</h2>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
 
 
   
