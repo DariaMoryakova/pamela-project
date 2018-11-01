@@ -1,4 +1,4 @@
-class InstructorsController < ApplicationController
+class CoursesController < ApplicationController
 
     def index 
         @courses = Course.all
@@ -42,7 +42,7 @@ class InstructorsController < ApplicationController
     end 
 
     def update 
-      course = Instructor.find(params[:id]) 
+      course = Course.find(params[:id]) 
       course.update(course_params)
 
       redirect_to course_path(course)
@@ -51,7 +51,7 @@ class InstructorsController < ApplicationController
     private
 
     def course_params
-        params.require(:course).permit(:first_name,:last_name,:age,:salary,:highest_comp_ed)
+        params.require(:course).permit(:course_name,:total_hours)
     end
 
     

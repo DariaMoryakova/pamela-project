@@ -1,0 +1,13 @@
+<h1>Edit Course: </h1>
+
+
+<%= form_with model: @course do |form| %>
+  <h2> Course name: </h2> <%= form.text_field :course_name %>
+  <h2> Total hours: </h2> <%= form.text_field :total_hours %>
+
+  <%= form.hidden_field :course_id, value: @course_id %>
+  </br>
+  </br>
+  </br>
+  <%= form.submit %>
+<% end %>

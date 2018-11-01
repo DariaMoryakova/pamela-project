@@ -23,8 +23,14 @@
   <body>
  
 <ul class="nav">
-  <li class="active"><a href="/ideas"></a></li>
-  <li class="dashboard"> Dashboard    </li>
+  <%# <li class="active"><a href="/ideas"></a></li> %>
+  <%# <li class="dashboard"> Dashboard    </li> %>
+  <li class="dashboard">  Instructors </li>
+  <li class="dashboard"> Students </li>
+  <li class="dashboard"> Courses </li>
+  <li class="dashboard"> Cohorts </li>
+
+
  <%= link_to (destroy_user_session_path ), method: :delete do %>
  <button id="logoutButton"> Log out </button> 
  <% end %>
